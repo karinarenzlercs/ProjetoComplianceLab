@@ -1,0 +1,103 @@
+{
+  "setor": "tecnologia",
+  "setor_nome": "Empresa de Tecnologia / SaaS",
+  "opcoes_padrao": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"],
+  "perguntas": [
+    {
+      "id": "Q-TEC-001",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "pergunta": "A empresa indicou formalmente um Encarregado pelo Tratamento de Dados (DPO) e publica um canal de contato para titulares, clientes e a ANPD?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-002",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "pergunta": "A empresa mantém registro das operações de tratamento (ROPA) e aplica privacy by design e by default na concepção de seus produtos?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-003",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "As bases legais estão documentadas para cada fluxo de tratamento, distinguindo dados de clientes (contratante) e de usuários finais?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-004",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "A empresa elabora Relatório de Impacto à Proteção de Dados (RIPD/DPIA) para produtos ou funcionalidades de alto risco, perfis ou dados sensíveis?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-005",
+      "dimensao": "Direitos dos Titulares",
+      "pergunta": "O produto oferece funcionalidades para que titulares e clientes exerçam acesso, correção, portabilidade e exclusão de dados, com prazos definidos?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-006",
+      "dimensao": "Direitos dos Titulares",
+      "pergunta": "A empresa publica política de privacidade e termos de uso claros, informando finalidades, bases legais, compartilhamentos e direitos dos titulares?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-007",
+      "dimensao": "Medidas de Segurança Técnica",
+      "pergunta": "A empresa aplica criptografia em trânsito e repouso, segregação de ambientes (dev/homologação/produção) e gestão centralizada de segredos e chaves?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-008",
+      "dimensao": "Medidas de Segurança Técnica",
+      "pergunta": "Requisitos de segurança e privacidade estão incorporados ao ciclo de desenvolvimento (SDLC), com revisão de código e testes de segurança?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-009",
+      "dimensao": "Resposta a Incidentes",
+      "pergunta": "Existe um plano de resposta a incidentes com monitoramento contínuo e registro de logs que permitam detectar, conter e investigar violações?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-010",
+      "dimensao": "Resposta a Incidentes",
+      "pergunta": "Há procedimento definido para notificar clientes (controladores) e a ANPD em caso de incidente com risco relevante, dentro dos prazos da regulamentação?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-011",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "pergunta": "A empresa mantém acordos de tratamento de dados (DPA) com clientes e subprocessadores, definindo papéis, finalidades e medidas de segurança?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-012",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "pergunta": "Existe inventário de subprocessadores (cloud, APIs de terceiros) com avaliação de segurança prévia e monitoramento periódico?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-013",
+      "dimensao": "Transferência Internacional de Dados",
+      "pergunta": "A empresa mapeou as regiões de processamento e armazenamento em nuvem fora do Brasil e o enquadramento legal de cada transferência internacional?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-014",
+      "dimensao": "Transferência Internacional de Dados",
+      "pergunta": "As transferências internacionais contam com as Cláusulas-Padrão Contratuais da ANPD (Res. 19/2024, obrigatórias desde 23/08/2025), normas corporativas globais ou outras garantias?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-015",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "Quando o produto pode ser acessado por crianças e adolescentes, a empresa trata seus dados em seu melhor interesse, com consentimento de um dos pais ou responsável quando exigido e minimização por padrão?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-TEC-016",
+      "dimensao": "Direitos dos Titulares",
+      "pergunta": "A empresa informa o uso de decisões automatizadas e perfis (algoritmos, scoring, recomendação) e disponibiliza mecanismo para o titular solicitar a revisão dessas decisões?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# ===================================================================
+# .gitignore — Diagnóstico de Maturidade LGPD com IA
+# Protege segredos e arquivos que NUNCA devem ir para o GitHub
+# ===================================================================
+
+# --- CRÍTICO: chave da API do Gemini (jamais commitar) ---
+.env
+.env.*
+!.env.example
+
+# --- Ambiente virtual Python ---
+venv/
+.venv/
+env/
+
+# --- Cache e artefatos do Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# --- PDFs (não versionar) ---
+# Relatórios gerados e guias normativos de referência (uso local apenas).
+*.pdf
+relatorios_gerados/
+
+# --- Configurações locais do Streamlit (podem conter segredos) ---
+.streamlit/secrets.toml
+
+# --- Arquivos do editor / sistema operacional ---
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+*.log

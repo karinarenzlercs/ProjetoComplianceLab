@@ -1,0 +1,153 @@
+{
+  "setor": "ecommerce",
+  "setor_nome": "E-commerce",
+  "versao": "1.1",
+  "data_revisao": "2026-06-16",
+  "normas_referencia": "LGPD (Lei 13.709/2018); Res. CD/ANPD nº 15/2024 (incidentes); Res. CD/ANPD nº 18/2024 (encarregado); Res. CD/ANPD nº 19/2024 (transferência internacional)",
+  "controles": [
+    {
+      "id": "EC-001",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Indicação formal do Encarregado pelo Tratamento de Dados (DPO)",
+      "artigo": "Art. 41 da LGPD e Res. CD/ANPD nº 18/2024",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-001",
+      "recomendacao_base": "Indicar formalmente o Encarregado (DPO) por documento escrito, datado e assinado com suas atribuições, conforme a Res. CD/ANPD nº 18/2024, e divulgar canal de contato visível no site. Agentes de pequeno porte podem ser dispensados da nomeação formal desde que mantenham canal de comunicação com os titulares."
+    },
+    {
+      "id": "EC-002",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Registro das operações de tratamento (ROPA) e programa de governança",
+      "artigo": "Art. 37 e Art. 50 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-002",
+      "recomendacao_base": "Manter registro das operações de tratamento de dados de clientes e estabelecer políticas internas de privacidade com treinamento da equipe."
+    },
+    {
+      "id": "EC-003",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Gestão de consentimento e cookies com aceite granular",
+      "artigo": "Art. 7, I e Art. 8 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-003",
+      "recomendacao_base": "Implementar banner de cookies com opção real de aceite e recusa por categoria, registrando o consentimento granular por finalidade."
+    },
+    {
+      "id": "EC-004",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Base legal para marketing, e-mail e remarketing",
+      "artigo": "Art. 7 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-004",
+      "recomendacao_base": "Definir e registrar a base legal para comunicações de marketing (consentimento ou legítimo interesse), oferecendo opção simples de descadastro (opt-out)."
+    },
+    {
+      "id": "EC-005",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Canal para exercício dos direitos dos titulares",
+      "artigo": "Art. 18 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-005",
+      "recomendacao_base": "Disponibilizar canal para que clientes solicitem acesso, correção, portabilidade e exclusão de seus dados, com fluxo e prazos definidos."
+    },
+    {
+      "id": "EC-006",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Política de privacidade acessível no cadastro e checkout",
+      "artigo": "Art. 9 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-006",
+      "recomendacao_base": "Apresentar política de privacidade clara nos momentos de cadastro e finalização de compra, informando finalidades, compartilhamentos e direitos."
+    },
+    {
+      "id": "EC-007",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Criptografia de dados pessoais e de pagamento em trânsito e repouso",
+      "artigo": "Art. 46 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-007",
+      "recomendacao_base": "Utilizar HTTPS/TLS em todo o site e criptografar dados pessoais e de pagamento em repouso, evitando armazenar dados de cartão fora de padrões como o PCI-DSS."
+    },
+    {
+      "id": "EC-008",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Controle de acesso e autenticação segura",
+      "artigo": "Art. 46 e Art. 47 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-008",
+      "recomendacao_base": "Aplicar controle de acesso por perfil, autenticação forte para painéis administrativos e política de senhas, registrando acessos a dados pessoais."
+    },
+    {
+      "id": "EC-009",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Plano de resposta a incidentes e vazamentos de dados",
+      "artigo": "Art. 46 e Art. 48 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-009",
+      "recomendacao_base": "Elaborar plano de resposta a incidentes com etapas de contenção, investigação e registro, testado periodicamente."
+    },
+    {
+      "id": "EC-010",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Procedimento de notificação à ANPD e aos titulares",
+      "artigo": "Art. 48 da LGPD e Res. CD/ANPD nº 15/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-010",
+      "recomendacao_base": "Definir procedimento para comunicar incidentes de risco ou dano relevante à ANPD e aos clientes no prazo de 3 (três) dias úteis a contar do conhecimento, conforme a Res. CD/ANPD nº 15/2024, mantendo a comunicação aos titulares acessível por no mínimo 3 meses."
+    },
+    {
+      "id": "EC-011",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Cláusulas de proteção de dados com gateways, marketplaces e logística",
+      "artigo": "Art. 39 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-011",
+      "recomendacao_base": "Incluir cláusulas de proteção de dados em contratos com operadores (meios de pagamento, marketplaces, transportadoras), delimitando finalidade e segurança."
+    },
+    {
+      "id": "EC-012",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Avaliação de segurança de fornecedores e plugins de terceiros",
+      "artigo": "Art. 42 a Art. 44 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-012",
+      "recomendacao_base": "Avaliar a segurança de plataformas, plugins e scripts de terceiros embarcados no site antes de utilizá-los e monitorá-los periodicamente."
+    },
+    {
+      "id": "EC-013",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Mapeamento de transferências internacionais (CDN, nuvem, ferramentas de marketing)",
+      "artigo": "Art. 33 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-013",
+      "recomendacao_base": "Mapear ferramentas que enviam dados para fora do Brasil (CDN, nuvem, analytics, marketing) e verificar o enquadramento legal de cada transferência."
+    },
+    {
+      "id": "EC-014",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Garantias contratuais para transferência internacional de dados",
+      "artigo": "Art. 33 e Art. 35 da LGPD e Res. CD/ANPD nº 19/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-014",
+      "recomendacao_base": "Adotar as Cláusulas-Padrão Contratuais (CPC) da ANPD ou outras garantias para legitimar transferências internacionais de dados de clientes. A Res. CD/ANPD nº 19/2024 tornou as CPC obrigatórias desde 23/08/2025."
+    },
+    {
+      "id": "EC-015",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Tratamento de dados de crianças e adolescentes",
+      "artigo": "Art. 14 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-015",
+      "recomendacao_base": "Tratar dados de crianças e adolescentes sempre em seu melhor interesse, com consentimento específico de ao menos um dos pais ou responsável quando exigido, evitando coleta excessiva e condicionamento de acesso a fornecimento de dados além do necessário."
+    },
+    {
+      "id": "EC-016",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Transparência e revisão de decisões automatizadas e perfis",
+      "artigo": "Art. 20 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-EC-016",
+      "recomendacao_base": "Informar de forma clara o uso de decisões automatizadas e perfis (recomendação, precificação, antifraude, scoring) e disponibilizar canal para que o titular solicite a revisão dessas decisões, conforme o Art. 20 da LGPD."
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Relatório de Diagnóstico LGPD</title>
+<style>
+  /* ===================================================================
+     CSS do relatório PDF — otimizado para WeasyPrint.
+     Paleta: azul escuro #1F4E79, azul #2E75B6, vermelho risco #A32D2D.
+     Fonte: DejaVu Sans (acompanha o WeasyPrint e renderiza acentos PT-BR).
+     =================================================================== */
+
+  /* Configuração de página A4 com paginação automática no rodapé. */
+  @page {
+    size: A4;
+    margin: 2cm 1.8cm 2.2cm 1.8cm;
+    @bottom-center {
+      content: "Página " counter(page) " de " counter(pages);
+      font-family: "DejaVu Sans", sans-serif;
+      font-size: 8pt;
+      color: #777;
+    }
+    @bottom-right {
+      content: "Diagnóstico LGPD";
+      font-family: "DejaVu Sans", sans-serif;
+      font-size: 8pt;
+      color: #aaa;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #222;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ---------- Cabeçalho ---------- */
+  .cabecalho {
+    border-bottom: 3px solid #1F4E79;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .cabecalho h1 {
+    color: #1F4E79;
+    font-size: 20pt;
+    margin: 0 0 4px 0;
+  }
+  .cabecalho .subtitulo {
+    color: #2E75B6;
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .meta-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+  }
+  .meta-tabela td {
+    padding: 2px 6px 2px 0;
+    vertical-align: top;
+  }
+  .meta-tabela .rotulo {
+    color: #1F4E79;
+    font-weight: bold;
+    white-space: nowrap;
+    width: 130px;
+  }
+
+  /* ---------- Bloco de score ---------- */
+  .secao-titulo {
+    color: #1F4E79;
+    font-size: 13pt;
+    font-weight: bold;
+    border-left: 5px solid #2E75B6;
+    padding-left: 8px;
+    margin: 22px 0 12px 0;
+  }
+  .score-box {
+    background: #F2F6FB;
+    border: 1px solid #D6E2F0;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .score-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .score-numero {
+    font-size: 26pt;
+    font-weight: bold;
+    color: #1F4E79;
+  }
+  .score-nivel {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #2E75B6;
+  }
+  /* Barra de progresso visual do score. */
+  .barra-externa {
+    width: 100%;
+    height: 18px;
+    background: #E3E9F0;
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  .barra-interna {
+    height: 100%;
+    background: #2E75B6;
+    border-radius: 9px;
+  }
+  .barra-interna.nivel-baixo { background: #A32D2D; }
+  .barra-interna.nivel-medio { background: #C77700; }
+  .barra-interna.nivel-bom   { background: #2E7D32; }
+
+  /* Resumo de lacunas por risco. */
+  .resumo-risco {
+    margin-top: 12px;
+    font-size: 9.5pt;
+  }
+  .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 6px;
+    font-size: 9pt;
+  }
+  .pill-alto  { background: #A32D2D; }
+  .pill-medio { background: #C77700; }
+  .pill-baixo { background: #2E7D32; }
+
+  /* ---------- Lacunas ---------- */
+  .lacuna {
+    border: 1px solid #DDD;
+    border-left: 5px solid #2E75B6;
+    border-radius: 5px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    break-inside: avoid;          /* não quebra a lacuna entre páginas */
+  }
+  .lacuna.risco-alto  { border-left-color: #A32D2D; }
+  .lacuna.risco-medio { border-left-color: #C77700; }
+  .lacuna.risco-baixo { border-left-color: #2E7D32; }
+
+  .lacuna-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+  }
+  .lacuna-titulo {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #1F4E79;
+    margin: 0;
+  }
+  .lacuna-artigo {
+    font-size: 9pt;
+    color: #555;
+    font-style: italic;
+  }
+  .tag-risco {
+    color: #fff;
+    font-weight: bold;
+    font-size: 8.5pt;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+  .tag-risco.risco-alto  { background: #A32D2D; }
+  .tag-risco.risco-medio { background: #C77700; }
+  .tag-risco.risco-baixo { background: #2E7D32; }
+
+  .lacuna-dimensao {
+    font-size: 8.5pt;
+    color: #2E75B6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .lacuna-descricao {
+    font-size: 10pt;
+    margin: 6px 0 8px 0;
+    text-align: justify;
+  }
+  .passos-titulo {
+    font-size: 9.5pt;
+    font-weight: bold;
+    color: #1F4E79;
+    margin-bottom: 4px;
+  }
+  .lacuna ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .lacuna ol li {
+    font-size: 9.5pt;
+    margin-bottom: 3px;
+  }
+
+  /* Mensagem de conformidade (sem lacunas). */
+  .conforme {
+    background: #EAF6EC;
+    border: 1px solid #BFE3C6;
+    border-radius: 6px;
+    padding: 16px;
+    color: #2E7D32;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* ---------- Rodapé / disclaimer ---------- */
+  .disclaimer {
+    margin-top: 26px;
+    border-top: 1px solid #CCC;
+    padding-top: 10px;
+    font-size: 8pt;
+    color: #666;
+    text-align: justify;
+  }
+  .disclaimer strong { color: #1F4E79; }
+</style>
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <div class="cabecalho">
+    <h1>Diagnóstico de Maturidade LGPD</h1>
+    <div class="subtitulo">Relatório de Conformidade e Plano de Ação</div>
+    <table class="meta-tabela">
+      <tr>
+        <td class="rotulo">Empresa</td>
+        <td>{{ empresa }}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">Setor</td>
+        <td>{{ setor_nome }}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">Data do diagnóstico</td>
+        <td>{{ data_geracao }}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">Base normativa</td>
+        <td>{{ normas_referencia }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ===================== SCORE ===================== -->
+  <div class="secao-titulo">Score de Maturidade</div>
+  <div class="score-box">
+    <div class="score-linha">
+      <span class="score-numero">{{ score }}%</span>
+      <span class="score-nivel">{{ nivel }}</span>
+    </div>
+    <div class="barra-externa">
+      <div class="barra-interna {{ classe_barra }}" style="width: {{ score }}%;"></div>
+    </div>
+    <div class="resumo-risco">
+      Foram avaliados <strong>{{ total_aplicaveis }}</strong> controles aplicáveis
+      ({{ total_nao_aplicaveis }} marcados como "Não se aplica").
+      {% if total_lacunas > 0 %}
+        Identificadas <strong>{{ total_lacunas }}</strong> lacunas:
+        {% if resumo_risco.alto > 0 %}<span class="pill pill-alto">{{ resumo_risco.alto }} Alto</span>{% endif %}
+        {% if resumo_risco.medio > 0 %}<span class="pill pill-medio">{{ resumo_risco.medio }} Médio</span>{% endif %}
+        {% if resumo_risco.baixo > 0 %}<span class="pill pill-baixo">{{ resumo_risco.baixo }} Baixo</span>{% endif %}
+      {% else %}
+        Nenhuma lacuna identificada nos controles avaliados.
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- ===================== LACUNAS ===================== -->
+  <div class="secao-titulo">Lacunas Identificadas e Plano de Ação</div>
+
+  {% if lacunas %}
+    {% for l in lacunas %}
+    <div class="lacuna risco-{{ l.risco }}">
+      <div class="lacuna-cabecalho">
+        <div>
+          <p class="lacuna-titulo">{{ loop.index }}. {{ l.controle }}</p>
+          <span class="lacuna-artigo">{{ l.artigo }}</span>
+        </div>
+        <span class="tag-risco risco-{{ l.risco }}">
+          {%- if l.risco == 'alto' -%}RISCO ALTO
+          {%- elif l.risco == 'medio' -%}RISCO MÉDIO
+          {%- else -%}RISCO BAIXO{%- endif -%}
+        </span>
+      </div>
+      <div class="lacuna-dimensao">{{ l.dimensao }}</div>
+      <div class="lacuna-descricao">{{ l.descricao }}</div>
+      <div class="passos-titulo">Passo a passo para adequação:</div>
+      <ol>
+        {% for passo in l.passos %}
+        <li>{{ passo }}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="conforme">
+      Parabéns! Nenhuma lacuna de conformidade foi identificada nos controles
+      avaliados para este diagnóstico. Recomenda-se manter o monitoramento contínuo.
+    </div>
+  {% endif %}
+
+  <!-- ===================== DISCLAIMER / RODAPÉ ===================== -->
+  <div class="disclaimer">
+    <strong>Aviso legal:</strong> Este relatório é um diagnóstico orientativo de
+    maturidade em proteção de dados, gerado automaticamente a partir das respostas
+    fornecidas. Não constitui parecer jurídico nem dispensa a análise de um
+    profissional especializado e do Encarregado (DPO) da organização. As
+    recomendações baseiam-se na Lei Geral de Proteção de Dados (Lei nº 13.709/2018)
+    e em resoluções da ANPD vigentes na data de revisão da base de conhecimento.
+    <br><br>
+    Base de conhecimento versão <strong>{{ versao_base }}</strong> —
+    revisada em <strong>{{ data_revisao_base }}</strong>.
+    Relatório gerado em {{ data_geracao }}.
+  </div>
+
+</body>
+</html>

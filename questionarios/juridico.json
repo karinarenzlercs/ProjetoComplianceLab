@@ -1,0 +1,97 @@
+{
+  "setor": "juridico",
+  "setor_nome": "Escritório de Advocacia",
+  "opcoes_padrao": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"],
+  "perguntas": [
+    {
+      "id": "Q-JUR-001",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "pergunta": "O escritório indicou formalmente um Encarregado pelo Tratamento de Dados (DPO) e divulga um canal de contato para titulares e para a ANPD?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-002",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "pergunta": "O escritório mantém um registro das operações de tratamento de dados (ROPA) e um programa de governança em privacidade com políticas internas?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-003",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "As bases legais para o tratamento de dados de clientes e partes do processo estão mapeadas e documentadas para cada finalidade?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-004",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "Os dados pessoais sensíveis manipulados em processos (saúde, convicções, biometria) recebem base legal específica e controles reforçados de sigilo?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-005",
+      "dimensao": "Direitos dos Titulares",
+      "pergunta": "Existe um canal estruturado para que titulares solicitem acesso, correção, anonimização ou exclusão de seus dados, com prazos de resposta definidos?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-006",
+      "dimensao": "Direitos dos Titulares",
+      "pergunta": "O escritório disponibiliza uma política de privacidade clara e acessível aos clientes, informando finalidades, bases legais e prazos de guarda?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-007",
+      "dimensao": "Medidas de Segurança Técnica",
+      "pergunta": "Os dossiês e documentos processuais são protegidos com criptografia, autenticação forte e controle de acesso por perfil?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-008",
+      "dimensao": "Medidas de Segurança Técnica",
+      "pergunta": "Existe uma política de retenção e descarte seguro de documentos, com prazos de guarda e eliminação/anonimização ao fim da finalidade?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-009",
+      "dimensao": "Resposta a Incidentes",
+      "pergunta": "O escritório possui um plano documentado de resposta a incidentes de segurança, com papéis definidos e testado periodicamente?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-010",
+      "dimensao": "Resposta a Incidentes",
+      "pergunta": "Há um procedimento definido para comunicar incidentes à ANPD e aos titulares dentro dos prazos previstos na regulamentação?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-011",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "pergunta": "Os contratos com fornecedores que tratam dados em nome do escritório (TI, nuvem, correspondentes) incluem cláusulas de proteção de dados?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-012",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "pergunta": "O escritório avalia a segurança e a privacidade dos prestadores antes de contratá-los e os monitora periodicamente?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-013",
+      "dimensao": "Transferência Internacional de Dados",
+      "pergunta": "O escritório mapeou quais serviços armazenam ou processam dados fora do Brasil (nuvem estrangeira, e-mail) e o enquadramento legal dessas transferências?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-014",
+      "dimensao": "Transferência Internacional de Dados",
+      "pergunta": "As transferências internacionais de dados contam com as Cláusulas-Padrão Contratuais da ANPD (Res. 19/2024, obrigatórias desde 23/08/2025) ou outras garantias previstas?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-JUR-015",
+      "dimensao": "Bases Legais e Consentimento",
+      "pergunta": "Quando o escritório trata dados de crianças e adolescentes (ex.: processos de família e sucessões), o faz em seu melhor interesse e com consentimento de um dos pais ou responsável quando exigido?",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    }
+  ]
+}

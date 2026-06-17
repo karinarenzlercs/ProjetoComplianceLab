@@ -1,0 +1,153 @@
+{
+  "setor": "tecnologia",
+  "setor_nome": "Empresa de Tecnologia / SaaS",
+  "versao": "1.1",
+  "data_revisao": "2026-06-16",
+  "normas_referencia": "LGPD (Lei 13.709/2018); Res. CD/ANPD nº 15/2024 (incidentes); Res. CD/ANPD nº 18/2024 (encarregado); Res. CD/ANPD nº 19/2024 (transferência internacional)",
+  "controles": [
+    {
+      "id": "TEC-001",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Indicação formal do Encarregado pelo Tratamento de Dados (DPO)",
+      "artigo": "Art. 41 da LGPD e Res. CD/ANPD nº 18/2024",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-001",
+      "recomendacao_base": "Indicar formalmente o Encarregado (DPO) por documento escrito, datado e assinado com suas atribuições, conforme a Res. CD/ANPD nº 18/2024, e publicar canal de contato para titulares, clientes e ANPD. Agentes de pequeno porte podem ser dispensados da nomeação formal desde que mantenham canal de comunicação com os titulares."
+    },
+    {
+      "id": "TEC-002",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Programa de governança, registro das operações (ROPA) e privacy by design",
+      "artigo": "Art. 37, Art. 46 §2º e Art. 50 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-002",
+      "recomendacao_base": "Manter registro das operações de tratamento e incorporar privacy by design e by default desde a concepção de produtos, com políticas internas e treinamento."
+    },
+    {
+      "id": "TEC-003",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Bases legais documentadas para tratamento de clientes e usuários finais",
+      "artigo": "Art. 7 e Art. 8 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-003",
+      "recomendacao_base": "Documentar a base legal de cada fluxo de tratamento, distinguindo dados de clientes (contratante) e de usuários finais, com consentimento registrado quando aplicável."
+    },
+    {
+      "id": "TEC-004",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Relatório de Impacto à Proteção de Dados (RIPD/DPIA) para tratamentos de alto risco",
+      "artigo": "Art. 38 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-004",
+      "recomendacao_base": "Elaborar Relatório de Impacto à Proteção de Dados para produtos ou funcionalidades que envolvam tratamento de alto risco, perfis ou dados sensíveis."
+    },
+    {
+      "id": "TEC-005",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Funcionalidades de acesso, portabilidade e exclusão de dados",
+      "artigo": "Art. 18 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-005",
+      "recomendacao_base": "Implementar funcionalidades e fluxos para que titulares e clientes exerçam acesso, correção, portabilidade e exclusão de dados, com prazos de resposta definidos."
+    },
+    {
+      "id": "TEC-006",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Transparência: política de privacidade e termos de uso claros",
+      "artigo": "Art. 9 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-006",
+      "recomendacao_base": "Publicar política de privacidade e termos em linguagem acessível, informando finalidades, bases legais, compartilhamentos e direitos dos titulares."
+    },
+    {
+      "id": "TEC-007",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Criptografia, segregação de ambientes e gestão de segredos",
+      "artigo": "Art. 46 e Art. 47 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-007",
+      "recomendacao_base": "Aplicar criptografia em trânsito e em repouso, segregar ambientes (dev/homologação/produção) e gerenciar segredos e chaves de forma centralizada e auditável."
+    },
+    {
+      "id": "TEC-008",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Security e privacy by design no ciclo de desenvolvimento (SDLC)",
+      "artigo": "Art. 46 §2º da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-008",
+      "recomendacao_base": "Incorporar requisitos de segurança e privacidade ao SDLC, com revisão de código, testes de segurança e minimização de dados por padrão."
+    },
+    {
+      "id": "TEC-009",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Plano de resposta a incidentes com monitoramento e logs",
+      "artigo": "Art. 46, Art. 48 e Art. 49 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-009",
+      "recomendacao_base": "Manter plano de resposta a incidentes, monitoramento contínuo e registro de logs que permitam detectar, conter e investigar violações de dados."
+    },
+    {
+      "id": "TEC-010",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Procedimento de comunicação de incidentes a clientes e à ANPD",
+      "artigo": "Art. 48 da LGPD e Res. CD/ANPD nº 15/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-010",
+      "recomendacao_base": "Definir procedimento para notificar clientes (controladores) e a ANPD em caso de incidente com risco relevante no prazo de 3 (três) dias úteis a contar do conhecimento, conforme a Res. CD/ANPD nº 15/2024."
+    },
+    {
+      "id": "TEC-011",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Contratos de operador (DPA) com clientes e subprocessadores",
+      "artigo": "Art. 39 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-011",
+      "recomendacao_base": "Manter acordos de tratamento de dados (DPA) que definam papéis de controlador e operador, finalidades, medidas de segurança e regras para subcontratação."
+    },
+    {
+      "id": "TEC-012",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Gestão e auditoria de subprocessadores (cloud e APIs de terceiros)",
+      "artigo": "Art. 42 a Art. 44 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-012",
+      "recomendacao_base": "Manter inventário de subprocessadores, avaliar sua segurança antes da contratação e monitorá-los periodicamente, comunicando alterações aos clientes."
+    },
+    {
+      "id": "TEC-013",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Mapeamento de transferências internacionais (infraestrutura cloud global)",
+      "artigo": "Art. 33 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-013",
+      "recomendacao_base": "Mapear regiões de processamento e armazenamento em nuvem fora do Brasil e verificar o enquadramento legal de cada transferência internacional."
+    },
+    {
+      "id": "TEC-014",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Mecanismos de garantia para transferência internacional",
+      "artigo": "Art. 33 e Art. 35 da LGPD e Res. CD/ANPD nº 19/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-014",
+      "recomendacao_base": "Adotar as Cláusulas-Padrão Contratuais (CPC) da ANPD, normas corporativas globais ou outras garantias para legitimar transferências internacionais. A Res. CD/ANPD nº 19/2024 tornou as CPC obrigatórias desde 23/08/2025."
+    },
+    {
+      "id": "TEC-015",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Tratamento de dados de crianças e adolescentes",
+      "artigo": "Art. 14 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-TEC-015",
+      "recomendacao_base": "Quando o produto puder ser acessado por crianças e adolescentes, tratar seus dados em seu melhor interesse, com consentimento específico de ao menos um dos pais ou responsável quando exigido, e aplicar minimização de dados por padrão."
+    },
+    {
+      "id": "TEC-016",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Transparência e revisão de decisões automatizadas e perfis",
+      "artigo": "Art. 20 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-TEC-016",
+      "recomendacao_base": "Informar de forma clara o uso de decisões automatizadas e perfis (algoritmos, scoring, recomendação) e disponibilizar mecanismo para que o titular solicite a revisão dessas decisões, conforme o Art. 20 da LGPD."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# ===================================================================
+# Dependências do projeto "Diagnóstico de Maturidade LGPD com IA"
+# Stack de custo zero — todas as bibliotecas são gratuitas/open source
+# ===================================================================
+
+# Interface web (rodar local e deploy no Streamlit Community Cloud)
+streamlit==1.40.2
+
+# Cliente oficial do Google Gemini (camada de redação do relatório)
+google-generativeai==0.8.3
+
+# Renderização do template HTML do relatório a partir de variáveis Python
+Jinja2==3.1.4
+
+# Conversão do HTML renderizado em PDF profissional
+weasyprint==63.1
+
+# Leitura da chave da API a partir do arquivo .env (nunca commitado)
+python-dotenv==1.0.1

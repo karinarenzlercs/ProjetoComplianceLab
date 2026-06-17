@@ -1,0 +1,144 @@
+{
+  "setor": "juridico",
+  "setor_nome": "Escritório de Advocacia",
+  "versao": "1.1",
+  "data_revisao": "2026-06-16",
+  "normas_referencia": "LGPD (Lei 13.709/2018); Res. CD/ANPD nº 15/2024 (incidentes); Res. CD/ANPD nº 18/2024 (encarregado); Res. CD/ANPD nº 19/2024 (transferência internacional)",
+  "controles": [
+    {
+      "id": "JUR-001",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Indicação formal do Encarregado pelo Tratamento de Dados (DPO)",
+      "artigo": "Art. 41 da LGPD e Res. CD/ANPD nº 18/2024",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-001",
+      "recomendacao_base": "Indicar formalmente o Encarregado (DPO) por documento escrito, datado e assinado, descrevendo suas atribuições, conforme a Res. CD/ANPD nº 18/2024, e divulgar canal de contato para titulares e ANPD. Agentes de pequeno porte podem ser dispensados da nomeação formal desde que mantenham canal de comunicação com os titulares."
+    },
+    {
+      "id": "JUR-002",
+      "dimensao": "Governança e Encarregado (DPO)",
+      "controle": "Programa de governança em privacidade e registro das operações de tratamento (ROPA)",
+      "artigo": "Art. 37 e Art. 50 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-002",
+      "recomendacao_base": "Manter registro das operações de tratamento de dados pessoais e estabelecer um programa de governança em privacidade com políticas internas e treinamento da equipe."
+    },
+    {
+      "id": "JUR-003",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Definição e documentação das bases legais para dados de clientes e partes do processo",
+      "artigo": "Art. 7 e Art. 8 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-003",
+      "recomendacao_base": "Mapear cada atividade de tratamento e documentar a base legal correspondente (execução de contrato, cumprimento de obrigação legal, exercício regular de direitos em processo), com consentimento registrado quando aplicável."
+    },
+    {
+      "id": "JUR-004",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Tratamento de dados pessoais sensíveis em processos com base legal e sigilo adequados",
+      "artigo": "Art. 11 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-004",
+      "recomendacao_base": "Identificar dados sensíveis manipulados (saúde, biometria, convicções) e assegurar base legal específica do Art. 11, com controles reforçados de sigilo e acesso restrito."
+    },
+    {
+      "id": "JUR-005",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Canal estruturado para atendimento aos direitos dos titulares",
+      "artigo": "Art. 18 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-005",
+      "recomendacao_base": "Disponibilizar canal para que titulares solicitem acesso, correção, anonimização ou exclusão de dados, com fluxo interno e prazos de resposta definidos."
+    },
+    {
+      "id": "JUR-006",
+      "dimensao": "Direitos dos Titulares",
+      "controle": "Política de privacidade clara e acessível aos clientes",
+      "artigo": "Art. 9 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-006",
+      "recomendacao_base": "Publicar política de privacidade em linguagem acessível informando finalidades, bases legais, prazo de guarda e formas de exercício de direitos."
+    },
+    {
+      "id": "JUR-007",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Controle de acesso e criptografia de dossiês e documentos processuais",
+      "artigo": "Art. 46 e Art. 47 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-007",
+      "recomendacao_base": "Aplicar criptografia em repouso e em trânsito, autenticação forte e controle de acesso por perfil aos documentos e sistemas que armazenam dados de clientes."
+    },
+    {
+      "id": "JUR-008",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Política de retenção e descarte seguro de documentos",
+      "artigo": "Art. 15 e Art. 16 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-008",
+      "recomendacao_base": "Definir prazos de guarda alinhados a obrigações legais e à OAB, com eliminação ou anonimização segura dos dados ao término da finalidade."
+    },
+    {
+      "id": "JUR-009",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Plano documentado de resposta a incidentes de segurança",
+      "artigo": "Art. 46 e Art. 48 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-009",
+      "recomendacao_base": "Elaborar plano de resposta a incidentes com papéis, etapas de contenção, investigação e registro, testado periodicamente."
+    },
+    {
+      "id": "JUR-010",
+      "dimensao": "Resposta a Incidentes",
+      "controle": "Procedimento de comunicação de incidentes à ANPD e aos titulares",
+      "artigo": "Art. 48 da LGPD e Res. CD/ANPD nº 15/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-010",
+      "recomendacao_base": "Definir procedimento para comunicar incidentes de risco ou dano relevante à ANPD e aos titulares no prazo de 3 (três) dias úteis a contar do conhecimento, conforme a Res. CD/ANPD nº 15/2024, mantendo a comunicação aos titulares acessível por no mínimo 3 meses."
+    },
+    {
+      "id": "JUR-011",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Cláusulas de proteção de dados em contratos com operadores",
+      "artigo": "Art. 39 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-011",
+      "recomendacao_base": "Incluir cláusulas de proteção de dados em contratos com fornecedores que tratam dados em nome do escritório (TI, nuvem, correspondentes), delimitando finalidade e segurança."
+    },
+    {
+      "id": "JUR-012",
+      "dimensao": "Gestão de Operadores e Fornecedores",
+      "controle": "Avaliação (due diligence) de segurança de prestadores",
+      "artigo": "Art. 42 a Art. 44 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-012",
+      "recomendacao_base": "Avaliar a maturidade de segurança e privacidade de prestadores antes da contratação e monitorar periodicamente, registrando as verificações."
+    },
+    {
+      "id": "JUR-013",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Mapeamento de transferências internacionais de dados",
+      "artigo": "Art. 33 da LGPD",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-013",
+      "recomendacao_base": "Mapear serviços que armazenam ou processam dados fora do Brasil (nuvem estrangeira, e-mail) e verificar o enquadramento legal da transferência."
+    },
+    {
+      "id": "JUR-014",
+      "dimensao": "Transferência Internacional de Dados",
+      "controle": "Garantias contratuais para transferência internacional",
+      "artigo": "Art. 33 e Art. 35 da LGPD e Res. CD/ANPD nº 19/2024",
+      "risco": "medio",
+      "pergunta_id": "Q-JUR-014",
+      "recomendacao_base": "Adotar as Cláusulas-Padrão Contratuais (CPC) da ANPD ou outras garantias previstas para legitimar transferências internacionais. A Res. CD/ANPD nº 19/2024 tornou as CPC obrigatórias desde 23/08/2025."
+    },
+    {
+      "id": "JUR-015",
+      "dimensao": "Bases Legais e Consentimento",
+      "controle": "Tratamento de dados de crianças e adolescentes em processos",
+      "artigo": "Art. 14 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-JUR-015",
+      "recomendacao_base": "Tratar dados de crianças e adolescentes (frequentes em processos de família e sucessões) sempre em seu melhor interesse, com consentimento específico de ao menos um dos pais ou responsável quando exigido, e controles reforçados de sigilo."
+    }
+  ]
+}
