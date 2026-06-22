@@ -1,4 +1,4 @@
-# Diagnóstico de Maturidade LGPD — ProjetoGRC
+# Diagnóstico de Maturidade LGPD — ProjetoComplianceLab
 
 Plataforma em Python que automatiza o **diagnóstico de conformidade com a LGPD**
 (Lei nº 13.709/2018) e com as **resoluções da ANPD** para três tipos de
