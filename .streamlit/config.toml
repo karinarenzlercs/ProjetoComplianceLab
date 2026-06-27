@@ -1,0 +1,10 @@
+# Tema e configurações da interface Streamlit.
+[theme]
+primaryColor = "#2E75B6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F7FB"
+textColor = "#1F2937"
+
+[client]
+# Esconde o menu/ferramentas de desenvolvedor para uma aparência de produto.
+toolbarMode = "minimal"
