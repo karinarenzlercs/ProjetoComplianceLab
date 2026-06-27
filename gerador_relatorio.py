@@ -71,6 +71,11 @@ def _mesclar_lacunas(diagnostico: dict, redacao: dict) -> list:
             "dimensao": l.get("dimensao", ""),
             "artigo": l["artigo"],
             "risco": l["risco"],
+            # Pergunta e resposta reais que originaram a lacuna — tornam o
+            # relatório auditável (rastreabilidade resposta -> diagnóstico).
+            "pergunta": l.get("pergunta", ""),
+            "resposta": l.get("resposta", ""),
+            "classe_resposta": l.get("classe_resposta", ""),
             "descricao": descricao,
             "passos": passos,
         })
@@ -101,6 +106,8 @@ def montar_contexto(diagnostico: dict, redacao: dict, empresa: str,
         "versao_base": diagnostico.get("versao_base", ""),
         "data_revisao_base": _formatar_data_iso(diagnostico.get("data_revisao_base", "")),
         "lacunas": _mesclar_lacunas(diagnostico, redacao),
+        # Apêndice de rastreabilidade: todas as respostas, na ordem do questionário.
+        "detalhe_respostas": diagnostico.get("detalhe_respostas", []),
     }
 
 

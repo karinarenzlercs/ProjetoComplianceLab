@@ -125,12 +125,18 @@ def main():
                 st.markdown(f"#### {dimensao_atual}")
 
             # index=None faz o rádio começar sem seleção, exigindo resposta consciente.
+            # O `help` mostra um exemplo curto e prático para orientar quem responde.
             resposta = st.radio(
                 pergunta["pergunta"],
                 options=pergunta["opcoes"],
                 index=None,
                 key=f"{setor}__{pergunta['id']}",  # chave única por setor+pergunta
+                help=pergunta.get("exemplo") or None,
             )
+            # Exibe o exemplo também abaixo da pergunta (não só no ícone de ajuda),
+            # para facilitar a compreensão de quem não tem conhecimento técnico.
+            if pergunta.get("exemplo"):
+                st.caption(f"💡 {pergunta['exemplo']}")
             respostas[pergunta["id"]] = resposta
 
         enviado = st.form_submit_button("🔍 Gerar diagnóstico", type="primary")
@@ -244,10 +250,31 @@ def exibir_resultado(resultado: dict):
             with st.expander(f"{i}. {lac['controle']}  —  {ROTULO_RISCO.get(lac['risco'])}"):
                 st.markdown(selo_risco(lac["risco"]), unsafe_allow_html=True)
                 st.caption(f"{lac['dimensao']} · {lac['artigo']}")
+                # Rastreabilidade: mostra a pergunta avaliada e a resposta dada,
+                # deixando claro por que este item virou uma lacuna.
+                if lac.get("pergunta"):
+                    st.caption(f"Pergunta avaliada: {lac['pergunta']}")
+                if lac.get("resposta"):
+                    st.markdown(f"**Sua resposta:** {lac['resposta']}")
                 st.write(descricao)
                 st.markdown("**Passo a passo para adequação:**")
                 for n, passo in enumerate(passos, 1):
                     st.markdown(f"{n}. {passo}")
+
+        # Apêndice na tela: todas as respostas, para conferência e auditoria.
+        detalhe = diag.get("detalhe_respostas", [])
+        if detalhe:
+            with st.expander("📋 Conferir todas as respostas informadas"):
+                st.caption(
+                    "Reproduz exatamente o que foi respondido, na ordem do "
+                    "questionário. O diagnóstico acima decorre apenas destas respostas."
+                )
+                dimensao_atual = None
+                for r in detalhe:
+                    if r["dimensao"] != dimensao_atual:
+                        dimensao_atual = r["dimensao"]
+                        st.markdown(f"**{dimensao_atual}**")
+                    st.markdown(f"- {r['pergunta']}  \n  → **{r['resposta']}**")
     else:
         st.success(
             "Parabéns! Nenhuma lacuna foi identificada nos controles avaliados. "

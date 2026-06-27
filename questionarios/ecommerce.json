@@ -6,97 +6,120 @@
     {
       "id": "Q-EC-001",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "A empresa indicou formalmente um Encarregado pelo Tratamento de Dados (DPO) e divulga um canal de contato visível no site?",
+      "pergunta": "A empresa tem uma pessoa responsável por proteção de dados (Encarregado/DPO) e mostra um contato dela no site para quem quiser falar sobre seus dados?",
+      "exemplo": "Ex.: um e-mail como privacidade@sualoja.com.br ou uma página \"Fale com o Encarregado\".",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-002",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "A empresa mantém registro das operações de tratamento (ROPA) e políticas internas de privacidade com treinamento da equipe?",
+      "pergunta": "A empresa tem uma lista organizada dos dados de clientes que coleta e para que usa cada um?",
+      "exemplo": "Ex.: um documento ou planilha registrando que você guarda nome, CPF e endereço para entregar pedidos, e a equipe é orientada a proteger esses dados.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-003",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "A empresa possui banner de cookies com opção real de aceite e recusa por categoria, registrando o consentimento granular por finalidade?",
+      "pergunta": "Quando alguém entra no site, aparece um aviso de cookies que deixa a pessoa aceitar ou recusar de verdade?",
+      "exemplo": "Ex.: um banner com os botões \"Aceitar\" e \"Recusar\", e não apenas um \"OK\".",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-004",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "As comunicações de marketing e e-mail possuem base legal definida e oferecem opção simples de descadastro (opt-out)?",
+      "pergunta": "Seus e-mails e mensagens de propaganda têm uma forma fácil de a pessoa pedir para parar de receber?",
+      "exemplo": "Ex.: um link \"descadastrar\" no rodapé do e-mail que realmente funciona.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-005",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "Existe um canal para que clientes solicitem acesso, correção, portabilidade e exclusão de seus dados, com fluxo e prazos definidos?",
+      "pergunta": "O cliente tem um canal claro para pedir para ver, corrigir ou apagar os dados que a empresa tem sobre ele?",
+      "exemplo": "Ex.: um e-mail ou formulário onde ele pede \"quero excluir minha conta e meus dados\" e recebe resposta num prazo definido.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-006",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "A política de privacidade é apresentada de forma clara nos momentos de cadastro e finalização de compra (checkout)?",
+      "pergunta": "A política de privacidade fica fácil de encontrar na hora do cadastro e na finalização da compra?",
+      "exemplo": "Ex.: um link \"Política de Privacidade\" visível na tela de cadastro e no checkout.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-007",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "O site utiliza HTTPS/TLS em todas as páginas e criptografa dados pessoais e de pagamento em repouso, sem armazenar dados de cartão fora de padrões como o PCI-DSS?",
+      "pergunta": "O site funciona com conexão segura (cadeado) em todas as páginas?",
+      "exemplo": "Ex.: o endereço começa com \"https://\" e aparece um cadeado ao lado dele no navegador.",
+      "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
+    },
+    {
+      "id": "Q-EC-007B",
+      "dimensao": "Medidas de Segurança Técnica",
+      "pergunta": "O pagamento é feito por um serviço externo confiável, sem o seu site guardar o número do cartão do cliente?",
+      "exemplo": "Ex.: o pagamento é processado por PagSeguro, Mercado Pago, Stripe ou pela solução do banco.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-008",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "Há controle de acesso por perfil, autenticação forte para o painel administrativo e política de senhas, com registro de acessos a dados pessoais?",
+      "pergunta": "Só pessoas autorizadas conseguem acessar o painel administrativo da loja, com senha forte e, de preferência, verificação em duas etapas?",
+      "exemplo": "Ex.: cada funcionário tem seu próprio login e o acesso ao painel pede um código além da senha.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-009",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "A empresa possui um plano de resposta a incidentes e vazamentos de dados, com etapas de contenção e investigação, testado periodicamente?",
+      "pergunta": "A empresa sabe o que fazer, passo a passo, se houver um vazamento ou roubo de dados?",
+      "exemplo": "Ex.: existe um plano escrito dizendo quem avisar e como conter o problema.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-010",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "Há um procedimento definido para comunicar incidentes à ANPD e aos clientes dentro dos prazos previstos na regulamentação?",
+      "pergunta": "A empresa sabe como e em quanto tempo avisar a ANPD e os clientes caso ocorra um vazamento grave?",
+      "exemplo": "Ex.: a equipe sabe que vazamentos relevantes devem ser comunicados em até 3 dias úteis.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-011",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "Os contratos com operadores (gateways de pagamento, marketplaces, transportadoras) incluem cláusulas de proteção de dados?",
+      "pergunta": "Os contratos com empresas que ajudam a operar a loja (pagamento, marketplace, transportadora) falam sobre proteção dos dados dos clientes?",
+      "exemplo": "Ex.: o contrato com a transportadora diz que ela só pode usar o endereço do cliente para entregar.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-012",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "A empresa avalia a segurança de plataformas, plugins e scripts de terceiros embarcados no site antes de utilizá-los e os monitora?",
+      "pergunta": "Antes de instalar plugins, ferramentas ou scripts de terceiros no site, a empresa verifica se são confiáveis e seguros?",
+      "exemplo": "Ex.: antes de adicionar um plugin de avaliações ou um chat, vocês checam a reputação e as permissões dele.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-013",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "A empresa mapeou as ferramentas que enviam dados para fora do Brasil (CDN, nuvem, analytics, marketing) e o enquadramento legal dessas transferências?",
+      "pergunta": "A empresa sabe quais ferramentas que usa enviam dados de clientes para fora do Brasil?",
+      "exemplo": "Ex.: saber que o Google Analytics, um serviço de e-mail ou a hospedagem guardam dados em servidores no exterior.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-014",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "As transferências internacionais de dados de clientes contam com as Cláusulas-Padrão Contratuais da ANPD (Res. 19/2024, obrigatórias desde 23/08/2025) ou outras garantias previstas?",
+      "pergunta": "Quando dados de clientes vão para empresas no exterior, existe algum contrato ou garantia que proteja esses dados conforme as regras da ANPD?",
+      "exemplo": "Ex.: usar as Cláusulas-Padrão da ANPD, obrigatórias desde agosto de 2025, com o fornecedor estrangeiro.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-015",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "Caso a loja trate dados de crianças e adolescentes, há consentimento específico de um dos pais ou responsável quando exigido, sem coleta excessiva nem condicionamento indevido?",
+      "pergunta": "Se a loja vende ou coleta dados de menores de 18 anos, pede a autorização de um responsável quando necessário? (Se a loja não atende menores, marque \"Não se aplica\".)",
+      "exemplo": "Ex.: uma loja de produtos infantis que pede o consentimento dos pais no cadastro.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-EC-016",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "A empresa informa o uso de decisões automatizadas e perfis (recomendação, precificação, antifraude, scoring) e oferece canal para o titular solicitar a revisão dessas decisões?",
+      "pergunta": "Se o site usa sistemas automáticos que tomam decisões sobre o cliente, isso é informado e ele pode pedir uma revisão?",
+      "exemplo": "Ex.: um sistema antifraude que recusa pedidos, ou preços e recomendações personalizados por algoritmo.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     }
   ]

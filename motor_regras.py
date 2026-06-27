@@ -39,6 +39,16 @@ PONTUACAO = {
     "Não se aplica": None,
 }
 
+# Classe (rótulo curto) de cada resposta, usada para colorir a resposta no
+# relatório e na tela — garante rastreabilidade visual entre o que o usuário
+# respondeu e o que aparece no diagnóstico.
+CLASSE_RESPOSTA = {
+    "Sim, implementado": "ok",
+    "Parcialmente": "parcial",
+    "Não": "nao",
+    "Não se aplica": "na",
+}
+
 # Respostas que indicam uma LACUNA de conformidade (geram recomendação).
 RESPOSTAS_LACUNA = ("Não", "Parcialmente")
 
@@ -170,6 +180,7 @@ def identificar_lacunas(respostas: dict, base: dict, questionario: dict) -> list
             "pergunta_id": pid,
             "pergunta": texto_pergunta.get(pid, ""),
             "resposta": resposta,
+            "classe_resposta": CLASSE_RESPOSTA.get(resposta, ""),
             "recomendacao_base": controle["recomendacao_base"],
         })
 
@@ -180,6 +191,32 @@ def identificar_lacunas(respostas: dict, base: dict, questionario: dict) -> list
         l["id"],
     ))
     return lacunas
+
+
+def detalhar_respostas(respostas: dict, questionario: dict) -> list:
+    """
+    Monta a lista completa de perguntas e respostas, na ORDEM do questionário,
+    para o apêndice de rastreabilidade do relatório.
+
+    Permite ao usuário (e a um auditor) conferir a correspondência exata entre
+    cada resposta informada e o diagnóstico gerado — nada no relatório vem de
+    fora do que foi respondido aqui. Para cada item registra também quantos
+    pontos a resposta somou e se ela foi considerada no cálculo do score.
+    """
+    detalhe = []
+    for q in questionario["perguntas"]:
+        resposta = respostas.get(q["id"])
+        pontos = PONTUACAO.get(resposta)  # None para "Não se aplica"/sem resposta
+        detalhe.append({
+            "id": q["id"],
+            "dimensao": q.get("dimensao", ""),
+            "pergunta": q["pergunta"],
+            "resposta": resposta if resposta is not None else "Sem resposta",
+            "classe_resposta": CLASSE_RESPOSTA.get(resposta, "na"),
+            "pontos": pontos,
+            "aplicavel": pontos is not None,
+        })
+    return detalhe
 
 
 def resumo_por_risco(lacunas: list) -> dict:
@@ -223,6 +260,7 @@ def gerar_diagnostico(setor: str, respostas: dict) -> dict:
         "total_lacunas": len(lacunas),
         "resumo_risco": resumo_por_risco(lacunas),
         "lacunas": lacunas,
+        "detalhe_respostas": detalhar_respostas(respostas, questionario),
     }
 
 

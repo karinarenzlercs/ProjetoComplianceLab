@@ -6,91 +6,106 @@
     {
       "id": "Q-JUR-001",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "O escritório indicou formalmente um Encarregado pelo Tratamento de Dados (DPO) e divulga um canal de contato para titulares e para a ANPD?",
+      "pergunta": "O escritório tem uma pessoa responsável por proteção de dados (Encarregado/DPO) e divulga um contato dela para clientes e para a ANPD?",
+      "exemplo": "Ex.: um e-mail de privacidade publicado no site ou informado nos contratos.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-002",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "O escritório mantém um registro das operações de tratamento de dados (ROPA) e um programa de governança em privacidade com políticas internas?",
+      "pergunta": "O escritório registra quais dados pessoais trata e tem regras internas de privacidade?",
+      "exemplo": "Ex.: um documento listando que guarda dados de clientes e de partes dos processos, com uma política interna.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-003",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "As bases legais para o tratamento de dados de clientes e partes do processo estão mapeadas e documentadas para cada finalidade?",
+      "pergunta": "O escritório sabe e registra o motivo de usar os dados de clientes e das partes dos processos?",
+      "exemplo": "Ex.: anotar que os dados de um processo são usados para \"exercício regular de direitos\".",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-004",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "Os dados pessoais sensíveis manipulados em processos (saúde, convicções, biometria) recebem base legal específica e controles reforçados de sigilo?",
+      "pergunta": "Os dados mais delicados que aparecem em processos (saúde, biometria, convicções) recebem cuidado e sigilo reforçados?",
+      "exemplo": "Ex.: um laudo médico de um processo fica com acesso restrito a quem realmente precisa.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-005",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "Existe um canal estruturado para que titulares solicitem acesso, correção, anonimização ou exclusão de seus dados, com prazos de resposta definidos?",
+      "pergunta": "Existe um canal para que as pessoas peçam para ver, corrigir ou apagar seus dados, com prazo de resposta?",
+      "exemplo": "Ex.: um e-mail onde a pessoa solicita acesso aos seus dados e recebe retorno num prazo definido.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-006",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "O escritório disponibiliza uma política de privacidade clara e acessível aos clientes, informando finalidades, bases legais e prazos de guarda?",
+      "pergunta": "O escritório oferece uma política de privacidade clara aos clientes, explicando como usa os dados e por quanto tempo guarda?",
+      "exemplo": "Ex.: um documento entregue na contratação explicando finalidades e prazos de guarda.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-007",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "Os dossiês e documentos processuais são protegidos com criptografia, autenticação forte e controle de acesso por perfil?",
+      "pergunta": "Os documentos e dossiês dos processos são protegidos com senha, criptografia e acesso só para quem precisa?",
+      "exemplo": "Ex.: as pastas digitais dos casos só abrem para os advogados responsáveis.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-008",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "Existe uma política de retenção e descarte seguro de documentos, com prazos de guarda e eliminação/anonimização ao fim da finalidade?",
+      "pergunta": "O escritório tem regras de por quanto tempo guarda cada documento e como descarta com segurança ao fim do prazo?",
+      "exemplo": "Ex.: triturar documentos em papel e apagar arquivos de forma definitiva após o prazo legal.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-009",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "O escritório possui um plano documentado de resposta a incidentes de segurança, com papéis definidos e testado periodicamente?",
+      "pergunta": "O escritório sabe o que fazer, passo a passo, se houver um vazamento ou invasão de dados?",
+      "exemplo": "Ex.: um plano escrito dizendo quem avisar e como conter o problema.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-010",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "Há um procedimento definido para comunicar incidentes à ANPD e aos titulares dentro dos prazos previstos na regulamentação?",
+      "pergunta": "O escritório sabe como e em quanto tempo avisar a ANPD e os titulares em caso de incidente grave?",
+      "exemplo": "Ex.: a equipe sabe que incidentes relevantes devem ser comunicados em até 3 dias úteis.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-011",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "Os contratos com fornecedores que tratam dados em nome do escritório (TI, nuvem, correspondentes) incluem cláusulas de proteção de dados?",
+      "pergunta": "Os contratos com fornecedores que acessam dados (TI, nuvem, correspondentes) falam sobre proteção desses dados?",
+      "exemplo": "Ex.: o contrato com o serviço de nuvem prevê sigilo e segurança dos arquivos.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-012",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "O escritório avalia a segurança e a privacidade dos prestadores antes de contratá-los e os monitora periodicamente?",
+      "pergunta": "Antes de contratar um fornecedor que vai lidar com dados, o escritório verifica se ele é seguro e confiável?",
+      "exemplo": "Ex.: checar como o sistema de gestão de processos protege as informações antes de assinar.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-013",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "O escritório mapeou quais serviços armazenam ou processam dados fora do Brasil (nuvem estrangeira, e-mail) e o enquadramento legal dessas transferências?",
+      "pergunta": "O escritório sabe quais serviços que usa guardam dados fora do Brasil?",
+      "exemplo": "Ex.: saber que o e-mail ou a nuvem usada armazenam arquivos em servidores no exterior.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-014",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "As transferências internacionais de dados contam com as Cláusulas-Padrão Contratuais da ANPD (Res. 19/2024, obrigatórias desde 23/08/2025) ou outras garantias previstas?",
+      "pergunta": "Quando dados vão para fora do Brasil, existe um contrato ou garantia que os proteja conforme as regras da ANPD?",
+      "exemplo": "Ex.: usar as Cláusulas-Padrão da ANPD, obrigatórias desde agosto de 2025, com o fornecedor estrangeiro.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-JUR-015",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "Quando o escritório trata dados de crianças e adolescentes (ex.: processos de família e sucessões), o faz em seu melhor interesse e com consentimento de um dos pais ou responsável quando exigido?",
+      "pergunta": "Quando o escritório lida com dados de menores de 18 anos (ex.: processos de família), trata esses dados com cuidado e pede autorização de um responsável quando necessário? (Se nunca for o caso, marque \"Não se aplica\".)",
+      "exemplo": "Ex.: dados de uma criança em um processo de guarda, com acesso restrito.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     }
   ]

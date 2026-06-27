@@ -6,97 +6,113 @@
     {
       "id": "Q-TEC-001",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "A empresa indicou formalmente um Encarregado pelo Tratamento de Dados (DPO) e publica um canal de contato para titulares, clientes e a ANPD?",
+      "pergunta": "A empresa tem uma pessoa responsável por proteção de dados (Encarregado/DPO) e divulga um contato dela para clientes e usuários?",
+      "exemplo": "Ex.: um e-mail como dpo@suaempresa.com.br publicado no site.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-002",
       "dimensao": "Governança e Encarregado (DPO)",
-      "pergunta": "A empresa mantém registro das operações de tratamento (ROPA) e aplica privacy by design e by default na concepção de seus produtos?",
+      "pergunta": "A empresa registra quais dados pessoais seus produtos coletam e já pensa em privacidade desde o início do desenvolvimento?",
+      "exemplo": "Ex.: ao criar uma função nova, vocês definem que ela só vai coletar o estritamente necessário.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-003",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "As bases legais estão documentadas para cada fluxo de tratamento, distinguindo dados de clientes (contratante) e de usuários finais?",
+      "pergunta": "A empresa sabe e registra o motivo de usar cada tipo de dado, separando os dados da empresa contratante e os dos usuários finais?",
+      "exemplo": "Ex.: anotar que o e-mail de login é usado para \"execução do contrato\" e o de marketing depende de consentimento.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-004",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "A empresa elabora Relatório de Impacto à Proteção de Dados (RIPD/DPIA) para produtos ou funcionalidades de alto risco, perfis ou dados sensíveis?",
+      "pergunta": "Antes de lançar um recurso que usa muitos dados pessoais ou cria perfis, a empresa analisa por escrito os riscos de privacidade?",
+      "exemplo": "Ex.: antes de lançar um recurso que pontua usuários por comportamento, vocês registram os riscos e como reduzi-los.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-005",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "O produto oferece funcionalidades para que titulares e clientes exerçam acesso, correção, portabilidade e exclusão de dados, com prazos definidos?",
+      "pergunta": "O produto permite que as pessoas vejam, corrijam, baixem ou apaguem seus dados?",
+      "exemplo": "Ex.: um botão \"baixar meus dados\" ou \"excluir minha conta\" dentro do sistema.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-006",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "A empresa publica política de privacidade e termos de uso claros, informando finalidades, bases legais, compartilhamentos e direitos dos titulares?",
+      "pergunta": "A empresa publica política de privacidade e termos de uso fáceis de entender, explicando o que faz com os dados?",
+      "exemplo": "Ex.: uma página de privacidade em linguagem simples dizendo o que coleta, por quê e com quem compartilha.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-007",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "A empresa aplica criptografia em trânsito e repouso, segregação de ambientes (dev/homologação/produção) e gestão centralizada de segredos e chaves?",
+      "pergunta": "Os dados são protegidos por criptografia e os ambientes de teste e de produção ficam separados?",
+      "exemplo": "Ex.: senhas guardadas de forma criptografada e o ambiente de testes sem usar dados reais de clientes.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-008",
       "dimensao": "Medidas de Segurança Técnica",
-      "pergunta": "Requisitos de segurança e privacidade estão incorporados ao ciclo de desenvolvimento (SDLC), com revisão de código e testes de segurança?",
+      "pergunta": "A equipe leva em conta segurança e privacidade durante o desenvolvimento, revisando o código antes de publicar?",
+      "exemplo": "Ex.: outra pessoa revisa o código e há testes de segurança antes de subir uma novidade.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-009",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "Existe um plano de resposta a incidentes com monitoramento contínuo e registro de logs que permitam detectar, conter e investigar violações?",
+      "pergunta": "A empresa consegue detectar, registrar e responder a um vazamento ou invasão?",
+      "exemplo": "Ex.: existem registros (logs) de acesso e um plano de quem faz o quê em caso de incidente.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-010",
       "dimensao": "Resposta a Incidentes",
-      "pergunta": "Há procedimento definido para notificar clientes (controladores) e a ANPD em caso de incidente com risco relevante, dentro dos prazos da regulamentação?",
+      "pergunta": "A empresa sabe como avisar os clientes (controladores) e a ANPD em caso de incidente grave, dentro do prazo?",
+      "exemplo": "Ex.: a equipe sabe que precisa comunicar incidentes relevantes em até 3 dias úteis.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-011",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "A empresa mantém acordos de tratamento de dados (DPA) com clientes e subprocessadores, definindo papéis, finalidades e medidas de segurança?",
+      "pergunta": "A empresa tem contratos de tratamento de dados (DPA) com seus clientes e com os fornecedores que processam dados?",
+      "exemplo": "Ex.: um anexo de proteção de dados no contrato definindo o que cada parte pode fazer com os dados.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-012",
       "dimensao": "Gestão de Operadores e Fornecedores",
-      "pergunta": "Existe inventário de subprocessadores (cloud, APIs de terceiros) com avaliação de segurança prévia e monitoramento periódico?",
+      "pergunta": "A empresa mantém uma lista dos fornecedores que acessam dados (nuvem, APIs) e verifica a segurança deles?",
+      "exemplo": "Ex.: uma lista com a nuvem usada, um serviço de e-mail e uma API de pagamento, com avaliação de cada um.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-013",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "A empresa mapeou as regiões de processamento e armazenamento em nuvem fora do Brasil e o enquadramento legal de cada transferência internacional?",
+      "pergunta": "A empresa sabe em quais países ficam os servidores onde os dados são processados ou guardados?",
+      "exemplo": "Ex.: saber que a hospedagem em nuvem está em uma região nos Estados Unidos.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-014",
       "dimensao": "Transferência Internacional de Dados",
-      "pergunta": "As transferências internacionais contam com as Cláusulas-Padrão Contratuais da ANPD (Res. 19/2024, obrigatórias desde 23/08/2025), normas corporativas globais ou outras garantias?",
+      "pergunta": "Quando dados vão para fora do Brasil, existe um contrato ou garantia que os proteja conforme as regras da ANPD?",
+      "exemplo": "Ex.: usar as Cláusulas-Padrão da ANPD, obrigatórias desde agosto de 2025, com o fornecedor estrangeiro.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-015",
       "dimensao": "Bases Legais e Consentimento",
-      "pergunta": "Quando o produto pode ser acessado por crianças e adolescentes, a empresa trata seus dados em seu melhor interesse, com consentimento de um dos pais ou responsável quando exigido e minimização por padrão?",
+      "pergunta": "Se o produto pode ser usado por menores de 18 anos, a empresa protege esses dados e pede autorização de um responsável quando necessário? (Se o produto não atende menores, marque \"Não se aplica\".)",
+      "exemplo": "Ex.: um app educacional que pede o consentimento dos pais no cadastro.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     },
     {
       "id": "Q-TEC-016",
       "dimensao": "Direitos dos Titulares",
-      "pergunta": "A empresa informa o uso de decisões automatizadas e perfis (algoritmos, scoring, recomendação) e disponibiliza mecanismo para o titular solicitar a revisão dessas decisões?",
+      "pergunta": "Se o produto usa algoritmos que tomam decisões sobre as pessoas, isso é informado e a pessoa pode pedir revisão?",
+      "exemplo": "Ex.: um score de crédito ou recomendação automática, com um canal para contestar a decisão.",
       "opcoes": ["Sim, implementado", "Parcialmente", "Não", "Não se aplica"]
     }
   ]

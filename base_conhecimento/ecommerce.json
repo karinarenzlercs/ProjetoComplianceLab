@@ -62,11 +62,20 @@
     {
       "id": "EC-007",
       "dimensao": "Medidas de Segurança Técnica",
-      "controle": "Criptografia de dados pessoais e de pagamento em trânsito e repouso",
+      "controle": "Conexão segura (HTTPS/TLS) em todo o site",
       "artigo": "Art. 46 da LGPD",
       "risco": "alto",
       "pergunta_id": "Q-EC-007",
-      "recomendacao_base": "Utilizar HTTPS/TLS em todo o site e criptografar dados pessoais e de pagamento em repouso, evitando armazenar dados de cartão fora de padrões como o PCI-DSS."
+      "recomendacao_base": "Utilizar HTTPS/TLS em todas as páginas do site, garantindo que os dados pessoais trafeguem de forma criptografada entre o cliente e a loja."
+    },
+    {
+      "id": "EC-007B",
+      "dimensao": "Medidas de Segurança Técnica",
+      "controle": "Processamento de pagamentos por provedor seguro, sem retenção de dados de cartão",
+      "artigo": "Art. 46 da LGPD",
+      "risco": "alto",
+      "pergunta_id": "Q-EC-007B",
+      "recomendacao_base": "Processar pagamentos por meio de provedores que sigam padrões como o PCI-DSS, evitando armazenar números de cartão no próprio site."
     },
     {
       "id": "EC-008",
