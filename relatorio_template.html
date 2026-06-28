@@ -8,10 +8,19 @@
    COMPLIANCE LAB — TEMPLATE DE RELATÓRIO (WeasyPrint / A4)
    Identidade: dossiê investigativo. Papel off-white + tinta
    quase preta + vermelho de marca. Archivo + IBM Plex Mono.
-   As variaveis Jinja2 consomem o contexto de
-   gerador_relatorio.montar_contexto().
+   Variáveis Jinja2 marcadas com {{ }} e comentários {# #}.
    ============================================================ */
 
+/* ---- FONTES -------------------------------------------------
+   WeasyPrint resolve o @import abaixo e baixa as fontes do
+   Google Fonts no momento da geração (requer rede no backend).
+   Para geração 100% OFFLINE, comente o @import e use @font-face
+   com arquivos locais ou base64, por exemplo:
+     @font-face { font-family:'Archivo'; font-weight:900; font-style:normal;
+       src:url('fonts/Archivo-Black.woff2') format('woff2'); }
+     @font-face { font-family:'IBM Plex Mono'; font-weight:500; font-style:normal;
+       src:url('fonts/IBMPlexMono-Medium.woff2') format('woff2'); }
+   ------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 /* ---- PÁGINA A4 + CABEÇALHO/RODAPÉ REPETIDOS ---------------- */
@@ -116,7 +125,7 @@ body {
   margin-top: 0.9cm; width: 100%; border-collapse: collapse;
   border-top: 1.2pt solid #B0202A;
 }
-.cover-risks td { padding: 12pt 0 0; vertical-align: top; width: 33.33%; }
+.cover-risks td { padding: 12pt 0 0; vertical-align: top; width: 50%; }
 .cover-risks .r-cap {
   font-family: 'IBM Plex Mono', monospace; font-size: 8pt;
   letter-spacing: 1.4pt; text-transform: uppercase;
@@ -129,7 +138,6 @@ body {
 .cover-risks .r-desc { font-family:'Archivo',sans-serif; font-size: 9pt; color:#6A645B; }
 .c-alto { color: #B0202A; }
 .c-medio { color: #C2891B; }
-.c-baixo { color: #3E7C5A; }
 
 /* ============================================================
    PÁGINAS DE LACUNAS
@@ -146,10 +154,6 @@ body {
 }
 .gaps-intro p {
   font-size: 10.5pt; color: #3A352E; max-width: 46em; margin: 12pt 0 0;
-}
-.gaps-empty {
-  margin-top: 30pt; border-top: 0.75pt solid #1A1714; padding-top: 14pt;
-  font-size: 12pt; color: #3E7C5A; font-weight: 700;
 }
 
 .lacuna {
@@ -176,7 +180,6 @@ body {
 }
 .badge-alto { color: #B0202A; border-color: #B0202A; }
 .badge-medio { color: #C2891B; border-color: #C2891B; }
-.badge-baixo { color: #3E7C5A; border-color: #3E7C5A; }
 .lacuna-artigo {
   font-family: 'IBM Plex Mono', monospace; font-size: 8pt;
   letter-spacing: 0.6pt; color: #8A847A; margin-top: 8pt;
@@ -186,13 +189,8 @@ body {
   font-size: 18pt; letter-spacing: -0.5pt; line-height: 1.12;
   margin: 6pt 0 0;
 }
-.lacuna-resp {
-  font-family: 'IBM Plex Mono', monospace; font-size: 8pt;
-  letter-spacing: 0.4pt; color: #8A847A; margin: 10pt 0 0;
-}
-.lacuna-resp .v { color: #1A1714; }
 .lacuna-desc {
-  font-size: 10.5pt; color: #3A352E; margin: 8pt 0 0; max-width: 50em;
+  font-size: 10.5pt; color: #3A352E; margin: 10pt 0 0; max-width: 50em;
 }
 .passos {
   list-style: none; counter-reset: passo; padding: 0;
@@ -246,11 +244,9 @@ body {
 </head>
 <body>
 
-  {# Dicionário de rótulos por nível de risco. #}
-  {% set rotulos_risco = {"alto": "Risco alto", "medio": "Risco médio", "baixo": "Risco baixo"} %}
-
   {# ========================================================= #}
-  {# PÁGINA 1 — CAPA                                            #}
+  {# PÁGINA 1 — CAPA. Variáveis: empresa, setor, data_diagnostico, #}
+  {# base_normativa, score, nivel, risco_alto_total, risco_medio_total #}
   {# ========================================================= #}
   <section class="cover">
     <div class="cover-label"><span class="dot"></span>Dossiê de Maturidade LGPD</div>
@@ -258,15 +254,15 @@ body {
     <h1 class="cover-company">{{ empresa }}</h1>
 
     <table class="cover-meta">
-      <tr><td class="k">Setor</td><td class="v">{{ setor_nome }}</td></tr>
-      <tr><td class="k">Data do diagnóstico</td><td class="v">{{ data_geracao }}</td></tr>
-      <tr><td class="k">Base normativa</td><td class="v">{{ normas_referencia }}</td></tr>
+      <tr><td class="k">Setor</td><td class="v">{{ setor }}</td></tr>
+      <tr><td class="k">Data do diagnóstico</td><td class="v">{{ data_diagnostico }}</td></tr>
+      <tr><td class="k">Base normativa</td><td class="v">{{ base_normativa }}</td></tr>
       <tr><td class="k">Documento</td><td class="v">Confidencial · Dossiê Nº LGPD—001</td></tr>
     </table>
 
     <div class="cover-score">
       <div class="score-cap">Score de maturidade</div>
-      <span class="score-num">{{ score|round|int }}</span><span class="score-den">/100</span>
+      <span class="score-num">{{ score }}</span><span class="score-den">/100</span>
       <div class="score-level">Nível classificado: <span class="em">{{ nivel }}</span></div>
     </div>
 
@@ -274,63 +270,50 @@ body {
       <tr>
         <td>
           <div class="r-cap c-alto"><span class="sq" style="background:#B0202A;"></span>Risco alto</div>
-          <div class="r-num">{{ resumo_risco.alto }}</div>
+          <div class="r-num">{{ risco_alto_total }}</div>
           <div class="r-desc">lacunas exigem ação imediata</div>
         </td>
         <td>
           <div class="r-cap c-medio"><span class="sq" style="background:#C2891B;"></span>Risco médio</div>
-          <div class="r-num">{{ resumo_risco.medio }}</div>
+          <div class="r-num">{{ risco_medio_total }}</div>
           <div class="r-desc">lacunas para o plano de 90 dias</div>
-        </td>
-        <td>
-          <div class="r-cap c-baixo"><span class="sq" style="background:#3E7C5A;"></span>Risco baixo</div>
-          <div class="r-num">{{ resumo_risco.baixo }}</div>
-          <div class="r-desc">ajustes de melhoria contínua</div>
         </td>
       </tr>
     </table>
   </section>
 
   {# ========================================================= #}
-  {# PÁGINAS DE LACUNAS — itera sobre `lacunas` (já ordenadas   #}
-  {# por risco pelo motor). Cada item traz dimensao, risco,     #}
-  {# artigo, controle (título), descricao e passos[].          #}
+  {# PÁGINAS DE LACUNAS. Itera sobre a lista `lacunas`.        #}
+  {# Cada item: numero, dimensao, risco ('alto'|'medio'),      #}
+  {# risco_label, artigo, titulo, descricao, passos[]          #}
   {# ========================================================= #}
   <section class="gaps-intro">
     <div class="sec-num">02 — LACUNAS IDENTIFICADAS</div>
     <h2>Lacunas por ordem de risco.</h2>
     <p>Cada bloco descreve uma lacuna de conformidade, o dispositivo da LGPD associado e o passo a passo recomendado para a adequação.</p>
 
-    {% if lacunas %}
-      {% for lacuna in lacunas %}
-      <div class="lacuna">
-        <div class="lacuna-num">{{ "%02d"|format(loop.index) }}</div>
-        <div class="lacuna-meta">
-          <span class="lacuna-dim">{{ lacuna.dimensao }}</span>
-          <span class="badge badge-{{ lacuna.risco }}">{{ rotulos_risco[lacuna.risco] }}</span>
-          <div class="lacuna-artigo">{{ lacuna.artigo }}</div>
-        </div>
-        <h3 class="lacuna-title">{{ lacuna.controle }}</h3>
-        {% if lacuna.resposta %}
-        <p class="lacuna-resp">Resposta informada: <span class="v">{{ lacuna.resposta }}</span></p>
-        {% endif %}
-        <p class="lacuna-desc">{{ lacuna.descricao }}</p>
-        <div class="passos-cap">Plano de ação</div>
-        <ol class="passos">
-          {% for passo in lacuna.passos %}<li>{{ passo }}</li>{% endfor %}
-        </ol>
+    {% for lacuna in lacunas %}
+    <div class="lacuna">
+      <div class="lacuna-num">{{ "%02d"|format(lacuna.numero) }}</div>
+      <div class="lacuna-meta">
+        <span class="lacuna-dim">{{ lacuna.dimensao }}</span>
+        {# badge: classe badge-alto ou badge-medio conforme lacuna.risco #}
+        <span class="badge badge-{{ lacuna.risco }}">{{ lacuna.risco_label }}</span>
+        <div class="lacuna-artigo">{{ lacuna.artigo }}</div>
       </div>
-      {% endfor %}
-    {% else %}
-      <div class="gaps-empty">
-        Nenhuma lacuna foi identificada nos controles avaliados. Mantenha o
-        monitoramento contínuo e revise os controles periodicamente.
-      </div>
-    {% endif %}
+      <h3 class="lacuna-title">{{ lacuna.titulo }}</h3>
+      <p class="lacuna-desc">{{ lacuna.descricao }}</p>
+      <div class="passos-cap">Plano de ação</div>
+      <ol class="passos">
+        {% for passo in lacuna.passos %}<li>{{ passo }}</li>{% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
   </section>
 
   {# ========================================================= #}
-  {# ÚLTIMA PÁGINA — ENCERRAMENTO                               #}
+  {# ÚLTIMA PÁGINA — ENCERRAMENTO. Variáveis: versao_base,     #}
+  {# data_geracao                                              #}
   {# ========================================================= #}
   <section class="closing">
     <div class="sec-num">03 — ENCERRAMENTO</div>
@@ -345,7 +328,7 @@ body {
       Documento de circulação restrita.
     </p>
     <table class="colophon">
-      <tr><td class="k">Base de conhecimento</td><td class="v">{{ versao_base }}{% if data_revisao_base %} · rev. {{ data_revisao_base }}{% endif %}</td></tr>
+      <tr><td class="k">Base de conhecimento</td><td class="v">{{ versao_base }}</td></tr>
       <tr><td class="k">Gerado em</td><td class="v">{{ data_geracao }}</td></tr>
       <tr><td class="k">Emitido por</td><td class="v">Compliance Lab</td></tr>
       <tr><td class="k">Referência</td><td class="v">Lei nº 13.709/2018 (LGPD)</td></tr>

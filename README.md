@@ -54,9 +54,13 @@ seja sempre gerado.
 ## 🛠️ Stack tecnológica
 
 - **Python 3.12+**
-- **Streamlit** — interface web
+- **Flask** — serve o front-end "dossiê" (HTML/CSS/JS) e expõe o backend por API JSON
 - **Jinja2** — renderização do template do relatório
 - **WeasyPrint** — conversão de HTML para PDF
+
+> A interface Streamlit anterior (`app.py`, `paginas/`, `ui.py`) foi mantida no
+> repositório apenas como referência da migração. O front-end ativo agora é o
+> servido por `server.py`.
 - Demais dependências em [`requirements.txt`](requirements.txt)
 
 ---
@@ -65,7 +69,13 @@ seja sempre gerado.
 
 ```
 ProjetoGRC/
-├── app.py                      # Interface web (Streamlit)
+├── server.py                   # Front-end ativo: app Flask + API JSON
+├── templates/
+│   ├── index.html              # Novo front-end "dossiê" (capa, GRC, fluxo)
+│   └── relatorio.html          # Template do relatório (PDF)
+├── static/
+│   └── app.js                  # Lógica do front (etapas, questionário, relatório)
+├── app.py                      # (Legado) interface Streamlit anterior
 ├── motor_regras.py             # Motor de regras determinístico
 ├── gerador_relatorio.py        # Geração do PDF (Jinja2 + WeasyPrint)
 ├── gemini_client.py            # Camada de redação das recomendações
@@ -75,12 +85,10 @@ ProjetoGRC/
 │   ├── juridico.json
 │   ├── tecnologia.json
 │   └── ecommerce.json
-├── questionarios/              # Perguntas por setor
-│   ├── juridico.json
-│   ├── tecnologia.json
-│   └── ecommerce.json
-└── templates/
-    └── relatorio.html          # Template do relatório
+└── questionarios/              # Perguntas por setor
+    ├── juridico.json
+    ├── tecnologia.json
+    └── ecommerce.json
 ```
 
 ---
@@ -129,19 +137,30 @@ base de conhecimento. O arquivo `.env` **não deve ser versionado** (já está n
 ### 4. Executar
 
 ```bash
-streamlit run app.py
+python server.py
 ```
 
-Acesse `http://localhost:8501` no navegador.
+Acesse `http://localhost:5000` no navegador.
 
 ---
 
-## ☁️ Deploy (Streamlit Community Cloud)
+## ☁️ Deploy
 
-O projeto está preparado para deploy gratuito no Streamlit Community Cloud.
-No ambiente Linux da plataforma, as dependências de sistema do WeasyPrint são
-declaradas em um arquivo `packages.txt`. Configure a variável `GEMINI_API_KEY`
-em **Settings → Secrets** do painel do Streamlit Cloud.
+O front-end agora é um app **Flask** (`server.py`), então o deploy usa qualquer
+host que rode WSGI (Render, Railway, Fly.io, um VPS com gunicorn etc.). Em
+produção, sirva com um servidor WSGI — por exemplo:
+
+```bash
+gunicorn server:app
+```
+
+As dependências de sistema do WeasyPrint (Linux) continuam declaradas em
+`packages.txt`. Configure a variável `GEMINI_API_KEY` como secret/variável de
+ambiente no painel do provedor escolhido.
+
+> Observação: o armazenamento dos PDFs gerados é em memória no processo. Com
+> múltiplos workers, troque o dicionário `RESULTADOS` de `server.py` por um
+> store compartilhado (ex.: Redis) ou gere o PDF sob demanda no download.
 
 ---
 

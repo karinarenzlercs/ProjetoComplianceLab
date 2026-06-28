@@ -3,7 +3,10 @@
 # Stack de custo zero — todas as bibliotecas são gratuitas/open source
 # ===================================================================
 
-# Interface web (rodar local e deploy no Streamlit Community Cloud)
+# Interface web — novo front-end "dossiê" servido por Flask
+flask==3.1.0
+
+# (Legado) interface Streamlit anterior — mantida para referência/migração
 streamlit==1.40.2
 
 # Cliente oficial do Google Gemini (camada de redação do relatório)
