@@ -14,7 +14,7 @@
   "use strict";
 
   // -- paleta (mesma do design) --------------------------------------------
-  var TINTA = "#1A1714", PAPEL = "#F5F2EC", VERMELHO = "#B0202A", CINZA = "#8A847A";
+  var TINTA = "#1A1714", PAPEL = "#F5F2EC", VERMELHO = "#C1121F", CINZA = "#8A847A";
 
   // Modelo de negócio do design -> setor interno do backend.
   var MODELOS = [
@@ -152,7 +152,7 @@
     Array.prototype.forEach.call(document.querySelectorAll(".cl-modelo"), function (card) {
       var on = card.getAttribute("data-id") === id;
       card.style.borderColor = on ? VERMELHO : "rgba(26,23,20,0.22)";
-      card.style.background = on ? "rgba(176,32,42,0.05)" : "transparent";
+      card.style.background = on ? "rgba(193,18,31,0.05)" : "transparent";
       $(".cl-modelo-code", card).style.color = on ? VERMELHO : CINZA;
       var dot = $(".cl-modelo-dot", card);
       dot.style.background = on ? VERMELHO : "transparent";
@@ -278,7 +278,7 @@
       var code = CODIGO_OPCAO[op] || "";
       return (
         '<button type="button" class="cl-opt" data-op="' + esc(op) + '" ' +
-        'style="display:flex; align-items:center; gap:16px; width:100%; text-align:left; padding:18px 20px; cursor:pointer; background:' + (on ? "rgba(176,32,42,0.05)" : "transparent") + '; border:1px solid ' + (on ? VERMELHO : "rgba(26,23,20,0.22)") + '; transition:border-color .2s, background .2s;">' +
+        'style="display:flex; align-items:center; gap:16px; width:100%; text-align:left; padding:18px 20px; cursor:pointer; background:' + (on ? "rgba(193,18,31,0.05)" : "transparent") + '; border:1px solid ' + (on ? VERMELHO : "rgba(26,23,20,0.22)") + '; transition:border-color .2s, background .2s;">' +
           '<span style="display:inline-block; width:11px; height:11px; flex-shrink:0; border-radius:50%; background:' + (on ? VERMELHO : "transparent") + '; border:1px solid ' + (on ? VERMELHO : "rgba(26,23,20,0.34)") + ';"></span>' +
           '<span style="font-weight:600; font-size:18px; letter-spacing:-0.01em;">' + esc(op) + '</span>' +
           '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:11px; letter-spacing:0.1em; margin-left:auto; color:' + (on ? VERMELHO : CINZA) + ';">' + esc(code) + '</span>' +
@@ -477,7 +477,7 @@
         // lacunas por risco
         '<div style="font-family:\'IBM Plex Mono\',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:' + CINZA + '; margin-bottom:22px;">Lacunas identificadas por nível de risco</div>' +
         '<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid ' + TINTA + '; margin-bottom:80px;">' +
-          blocoRisco("#B0202A", "Risco alto", rr.alto, "lacunas exigem ação imediata", true) +
+          blocoRisco("#C1121F", "Risco alto", rr.alto, "lacunas exigem ação imediata", true) +
           blocoRisco("#C2891B", "Risco médio", rr.medio, "lacunas para o plano de 90 dias", true) +
           blocoRisco("#3E7C5A", "Risco baixo", rr.baixo, "ajustes de melhoria contínua", false) +
         '</div>' +
