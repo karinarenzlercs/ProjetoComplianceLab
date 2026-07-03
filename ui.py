@@ -127,14 +127,44 @@ _CSS = """
     background: #C1121F; border-color: #C1121F; color: #F5F2EC;
   }
 
-  /* Campos de entrada em fio fino, cantos retos. */
-  [data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
+  /* Campos de entrada em fio fino, cantos retos, fundo papel. Seletores
+     agressivos para vencer os estilos inline do BaseWeb/Streamlit. */
+  [data-baseweb="input"],
+  [data-baseweb="base-input"],
+  [data-baseweb="textarea"],
+  [data-baseweb="select"] > div,
+  .stTextInput div[data-baseweb="input"],
+  .stTextArea div[data-baseweb="textarea"],
+  .stNumberInput div[data-baseweb="input"],
+  .stSelectbox div[data-baseweb="select"] > div,
+  .stDateInput div[data-baseweb="input"] {
+    background: #F5F2EC !important;
+    background-color: #F5F2EC !important;
+    border: 1px solid #D8D2C6 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  /* O elemento <input>/<textarea> interno também herda o fundo papel. */
+  .stTextInput input,
+  .stTextArea textarea,
+  .stNumberInput input,
+  .stDateInput input,
+  [data-baseweb="input"] input,
+  [data-baseweb="base-input"] input,
+  [data-baseweb="textarea"] textarea {
+    background: #F5F2EC !important;
+    background-color: #F5F2EC !important;
+    color: #1A1714 !important;
     border-radius: 0 !important;
   }
 
   /* ---------- Sidebar: mesmo papel, fonte Archivo, sem azul ---------- */
-  [data-testid="stSidebar"] {
-    background: #F5F2EC;
+  [data-testid="stSidebar"],
+  [data-testid="stSidebar"] > div,
+  [data-testid="stSidebarContent"],
+  section[data-testid="stSidebar"] {
+    background: #F5F2EC !important;
+    background-color: #F5F2EC !important;
     border-right: 1px solid #D8D2C6;
   }
   [data-testid="stSidebar"] * {
@@ -162,24 +192,42 @@ _CSS = """
     border-bottom: 1px solid #D8D2C6;
   }
 
-  /* ---------- Botão primário: retângulo tinta cheia, texto branco ---------- */
+  /* ---------- Botão primário: retângulo tinta cheia, texto branco ----------
+     Seletores agressivos + !important para vencer o azul de tema do Streamlit
+     (--primary-color) em qualquer versão. */
   [data-testid="stBaseButton-primary"],
+  [data-testid="baseButton-primary"],
   .stButton button[kind="primary"],
-  button[data-testid="baseButton-primary"] {
+  .stButton > button[kind="primary"],
+  .stFormSubmitButton button[kind="primary"],
+  button[kind="primary"],
+  button[kind="primaryFormSubmit"] {
     border-radius: 0 !important;
     background: #1A1714 !important;
-    border: 1px solid #1A1714 !important;
+    background-color: #1A1714 !important;
+    background-image: none !important;
+    border: none !important;
     color: #FFFFFF !important;
     box-shadow: none !important;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    letter-spacing: .04em;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 600 !important;
+    letter-spacing: .04em !important;
+  }
+  [data-testid="stBaseButton-primary"] *,
+  [data-testid="baseButton-primary"] *,
+  button[kind="primary"] *,
+  button[kind="primaryFormSubmit"] * {
+    color: #FFFFFF !important;
   }
   [data-testid="stBaseButton-primary"]:hover,
+  [data-testid="baseButton-primary"]:hover,
   .stButton button[kind="primary"]:hover,
-  button[data-testid="baseButton-primary"]:hover {
+  .stFormSubmitButton button[kind="primary"]:hover,
+  button[kind="primary"]:hover,
+  button[kind="primaryFormSubmit"]:hover {
     background: #C1121F !important;
-    border-color: #C1121F !important;
+    background-color: #C1121F !important;
+    border: none !important;
     color: #FFFFFF !important;
   }
 
