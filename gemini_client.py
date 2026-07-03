@@ -20,8 +20,9 @@ import json
 import time
 from pathlib import Path
 
-import google.generativeai as genai
-from google.api_core import exceptions as google_exceptions
+from google import genai
+from google.genai import types
+from google.genai import errors as genai_errors
 from dotenv import load_dotenv
 
 # ---------------------------------------------------------------------------
@@ -126,36 +127,37 @@ def _extrair_json(texto: str):
 def _chamar_gemini(prompt: str, modelo: str) -> str:
     """
     Faz UMA chamada ao Gemini com retry/backoff exponencial para o erro 429
-    (ResourceExhausted) e para indisponibilidades temporárias (503).
+    (rate limit) e para indisponibilidades temporárias (503).
 
     Retorna o texto bruto da resposta. Lança exceção se esgotar as tentativas.
     """
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    cliente = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
     # Força saída em JSON e baixa temperatura para respostas consistentes.
-    config = genai.GenerationConfig(
+    config = types.GenerateContentConfig(
         temperature=0.4,
         response_mime_type="application/json",
     )
-    cliente = genai.GenerativeModel(modelo, generation_config=config)
 
     ultimo_erro = None
     for tentativa in range(MAX_TENTATIVAS):
         try:
-            resposta = cliente.generate_content(prompt)
+            resposta = cliente.models.generate_content(
+                model=modelo,
+                contents=prompt,
+                config=config,
+            )
             return resposta.text
-        except google_exceptions.ResourceExhausted as e:
-            # Erro 429 — limite de requisições. Espera e tenta de novo.
+        except genai_errors.APIError as e:
+            # A nova SDK unifica os erros HTTP em APIError, com o status em .code.
+            # Só faz retry para 429 (rate limit) e 503 (indisponível); os demais
+            # (ex.: 400, 401, 404) propagam de imediato para acionar o fallback.
+            if e.code not in (429, 503):
+                raise
             ultimo_erro = e
             espera = BACKOFF_BASE_SEG * (2 ** tentativa)
-            print(f"[gemini] 429 rate limit. Aguardando {espera:.0f}s "
-                  f"(tentativa {tentativa + 1}/{MAX_TENTATIVAS})...")
-            time.sleep(espera)
-        except google_exceptions.ServiceUnavailable as e:
-            # Erro 503 — serviço temporariamente indisponível. Mesmo tratamento.
-            ultimo_erro = e
-            espera = BACKOFF_BASE_SEG * (2 ** tentativa)
-            print(f"[gemini] 503 indisponível. Aguardando {espera:.0f}s "
+            rotulo = "429 rate limit" if e.code == 429 else "503 indisponível"
+            print(f"[gemini] {rotulo}. Aguardando {espera:.0f}s "
                   f"(tentativa {tentativa + 1}/{MAX_TENTATIVAS})...")
             time.sleep(espera)
 

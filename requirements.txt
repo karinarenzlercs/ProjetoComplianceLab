@@ -10,7 +10,7 @@ flask==3.1.0
 streamlit==1.40.2
 
 # Cliente oficial do Google Gemini (camada de redação do relatório)
-google-generativeai==0.8.3
+google-genai==2.10.0
 
 # Renderização do template HTML do relatório a partir de variáveis Python
 Jinja2==3.1.4
