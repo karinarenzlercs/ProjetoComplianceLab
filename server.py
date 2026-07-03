@@ -18,7 +18,11 @@ front-end:
   POST /api/diagnostico        -> roda o motor + redação + PDF; devolve o resultado
   GET  /api/relatorio/<id>     -> baixa o PDF já gerado para aquele diagnóstico
 
-Rodar localmente:   python server.py   (http://localhost:5000)
+Rodar localmente:   python server.py            (http://localhost:5000)
+Rodar em produção:  gunicorn server:app         (usa gunicorn.conf.py: 1 worker)
+
+Obs.: gunicorn.conf.py fixa workers = 1 de propósito, porque RESULTADOS é um
+store em memória não compartilhado entre processos (ver comentário abaixo).
 """
 
 import uuid
