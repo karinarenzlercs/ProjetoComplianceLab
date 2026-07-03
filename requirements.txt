@@ -20,3 +20,6 @@ weasyprint==63.1
 
 # Leitura da chave da API a partir do arquivo .env (nunca commitado)
 python-dotenv==1.0.1
+
+# Servidor WSGI de produção (Linux/deploy — não roda no Windows local)
+gunicorn==23.0.0
