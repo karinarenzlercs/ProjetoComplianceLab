@@ -131,6 +131,65 @@ _CSS = """
   [data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
     border-radius: 0 !important;
   }
+
+  /* ---------- Sidebar: mesmo papel, fonte Archivo, sem azul ---------- */
+  [data-testid="stSidebar"] {
+    background: #F5F2EC;
+    border-right: 1px solid #D8D2C6;
+  }
+  [data-testid="stSidebar"] * {
+    font-family: 'Archivo', sans-serif;
+    color: #1A1714;
+  }
+  /* Neutraliza o azul padrão do Streamlit em links/itens da navegação. */
+  [data-testid="stSidebar"] a,
+  [data-testid="stSidebarNav"] a,
+  [data-testid="stSidebarNav"] a span {
+    color: #1A1714 !important;
+  }
+  [data-testid="stSidebarNav"] a:hover span { color: #C1121F !important; }
+
+  /* Título fixo da sidebar: "COMPLIANCE LAB" em IBM Plex Mono caixa alta. */
+  [data-testid="stSidebarNav"]::before {
+    content: "COMPLIANCE LAB";
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: #1A1714;
+    padding: 8px 16px 14px 16px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #D8D2C6;
+  }
+
+  /* ---------- Botão primário: retângulo tinta cheia, texto branco ---------- */
+  [data-testid="stBaseButton-primary"],
+  .stButton button[kind="primary"],
+  button[data-testid="baseButton-primary"] {
+    border-radius: 0 !important;
+    background: #1A1714 !important;
+    border: 1px solid #1A1714 !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+  [data-testid="stBaseButton-primary"]:hover,
+  .stButton button[kind="primary"]:hover,
+  button[data-testid="baseButton-primary"]:hover {
+    background: #C1121F !important;
+    border-color: #C1121F !important;
+    color: #FFFFFF !important;
+  }
+
+  /* ---------- Bloco de formulário (st.form): reto, sem sombra ---------- */
+  [data-testid="stForm"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #D8D2C6;
+    background: transparent;
+  }
 </style>
 """
 
