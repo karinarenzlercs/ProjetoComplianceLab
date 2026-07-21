@@ -140,7 +140,7 @@ base de conhecimento. O arquivo `.env` **não deve ser versionado** (já está n
 python server.py
 ```
 
-Acesse `http://localhost:5000` no navegador.
+Acesse `https://projetocompliancelab.onrender.com` no navegador. 
 
 ---
 
